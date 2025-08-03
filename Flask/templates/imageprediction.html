@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background-color: #e6f7ff;
+        }
+        .container {
+            margin-top: 40px;
+        }
+        img {
+            width: 200px;
+            height: 200px;
+            border-radius: 10px;
+        }
+        table {
+            margin: auto;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #999;
+            padding: 10px;
+        }
+        th {
+            background-color: #0077cc;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Prediction: {{ prediction }}</h1>
+        <img src="{{ img_path }}" alt="Uploaded Image">
+        <h2>Nutrition Information</h2>
+        <table>
+            <tr>
+                <th>Nutrient</th>
+                <th>Value</th>
+            </tr>
+            {% for item in nutrition %}
+            <tr>
+                <td>{{ item.label }}</td>
+                <td>{{ item.value }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>
+
